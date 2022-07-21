@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Opens the git repo web
+
+target=$(git status | grep 'with' | cut -d \' -f2- | rev | cut -d \' -f2- | rev)
+remote=$(echo "$target" | cut -d/ -f1)
+branch=$(echo "$target" | cut -d/ -f2-)
+
+url=$(git remote get-url "$remote" | sed -e "s/.git$//")
+open "$url/tree/$branch"
