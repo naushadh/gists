@@ -2,7 +2,7 @@
 
 # Opens the git repo web
 
-target=$(git status | grep 'with' | cut -d \' -f2- | rev | cut -d \' -f2- | rev)
+target=$(git status | grep 'Your branch' | cut -d \' -f2- | rev | cut -d \' -f2- | rev)
 remote=$(echo "$target" | cut -d/ -f1)
 branch=$(echo "$target" | cut -d/ -f2-)
 
