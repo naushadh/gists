@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker run -ti --rm -v ~/.kube:/root/.kube -v ~/.helm:/root/.helm alpine/helm "$@"

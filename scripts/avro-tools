@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+docker run --rm -it \
+  --volume "$(pwd)":/app \
+  --volume /tmp:/tmp \
+  --workdir /app \
+  coderfi/avro-tools "$@"

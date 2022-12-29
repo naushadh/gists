@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Safties on: https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -euo pipefail
+
+docker run --rm -i hadolint/hadolint < "$PWD/$1"
