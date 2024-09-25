@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Usage: Generate HTML
+# trivy image --severity CRITICAL,HIGH --format template --template @contrib/html.tpl "$IMAGE"
+
+# Lifted from: https://aquasecurity.github.io/trivy/v0.54/getting-started/installation/#use-container-image
+docker run --rm \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume "$HOME"/Library/Caches:/root/.cache/ \
+    aquasec/trivy:latest "$@"
